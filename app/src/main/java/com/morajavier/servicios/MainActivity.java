@@ -40,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
         jBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
+                 * ¿Se preguntan por que el MiCrono.n = 0?
+                 * lo agregue aqui ya que si agrega al servicio esta declaracion al momento de pausar se le asigna el valor de 0 y no hace
+                 * lo adecuado que hacer una pausa
+                 * entonces cuando se quiera parar el cronometro primero se hace 0 n y despues se paran los servicios
+                 * */
+
                 stopCrono();
+                MiCrono.n = 0.0000;
             }
         });
         //MiCrono.setUpdateListener(this);
@@ -50,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //continuar el cronometro
 
-                //MiCrono.n = 1;
-                continuaCrono();
+                initCrono();
             }
         });
 
@@ -79,15 +86,15 @@ public class MainActivity extends AppCompatActivity {
         Intent in = new Intent(this, MiCrono.class);
         stopService(in);
     }
-    public void continuaCrono(){
-        /*
+    /*public void continuaCrono(){
+
         double guardaTiempo = MiCrono.n;
         stopCrono();
-        MiCrono.n = guardaTiempo;*/
+        MiCrono.n = guardaTiempo;
         initCrono();
 
 
-    }
+    }*/
     public void pausCrono(){
         double guardaTiemoi = MiCrono.n;
         stopCrono();
