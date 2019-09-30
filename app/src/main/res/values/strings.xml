@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Servicios</string>
+    <string name="refterminar">terminar</string>
+    <string name="refiniciar">Iniciar</string>
+    <string name="refpausar">Pausar</string>
+    <string name="refcontinuar">Continuar</string>
+</resources>
